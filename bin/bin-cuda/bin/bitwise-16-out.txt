@@ -1,0 +1,21 @@
+[100%] Built target bitwise
+Search levels: 16
+Max stack items: 9
+Starting with program: v1 
+
+Walltime: 00:00:00 (0.90s)
+Filled truth tables: 35388 (54.00%)
+Valid programs: 65536 (73197 per sec)
+Last evaluated, thread: v1 v1 v3 and v4 not eor eor v2 v3 and or not  (13 ops)
+
+Walltime: 00:00:03 (3.83s)
+Filled truth tables: 55531 (84.73%)
+Valid programs: 131072 (34188 per sec)
+Last evaluated, thread: v1 v2 v4 or or v1 v2 not and v3 not eor and  (13 ops)
+Final:
+
+Walltime: 00:00:11 (11.91s)
+Filled truth tables: 63834 (97.40%)
+Valid programs: 191178 (16055 per sec)
+Last evaluated, thread: v1  (1 ops)
+

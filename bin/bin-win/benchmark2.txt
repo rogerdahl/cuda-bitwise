@@ -1,0 +1,19 @@
+Intel, optimized
+
+Total time: 3975.01s
+Programs evaluated: 556466700288
+Programs evaluated per second: 139991360
+Valid programs: 4549472256 (0.82%)
+Found truth tables: 14981 (22.86%)
+Operations in program: 11
+
+~~
+
+Thread: 0
+Walltime, this thread: 82808.98s
+Valid found, this thread: 515731619840 (6227967 per sec)
+Filled truth tables, all threads: 65492 (99.93%)
+Last evaluated: v1 not not not not not v3 and v3 and not v4 xor not not  (15 ops)
+
+~~
+

@@ -1,0 +1,23 @@
+8-17
+$ ./bitwise
+
+Walltime: 01:54:33 (6873.92s)
+Filled truth tables: 64643 (98.64%)
+Valid programs: 83684753408 (12174233 per sec)
+Last evaluated: 1111111100110011: v4  v4  v2  not eor not eor not (s=1) - v2  v4  v3  v3  not eor and and or  (17 ops)
+
+Walltime: 01:54:34 (6874.70s)
+Filled truth tables: 64643 (98.64%)
+Valid programs: 83694273720 (12174238 per sec)
+
+~
+
+$ ./bitwise 0
+
+Walltime: 00:01:21 (81.13s)
+Filled truth tables: 0 (0.00%)
+Valid programs: 0 (0 per sec)
+
+~~~~~~~~~~~~~~~~~~~
+
+
