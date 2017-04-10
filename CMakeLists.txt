@@ -70,7 +70,7 @@ link_libraries(
 )
 
 cuda_add_executable(
-  bitwise
+  bitwise-cuda
   ${SRC_DIR}/bitwise-cuda/main.cu
   ${SRC_DIR}/bitwise-cuda/cuda_helpers.cpp
 )

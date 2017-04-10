@@ -1,0 +1,69 @@
+[8:31:53 AM] Bjørn Bæverfjord:
+v1
+v1 not
+v1 v1 xor
+v2
+v2 not
+v2 v1 and
+v2 v1 or
+v2 v1 xor
+v2 v2 xor
+v3
+v3 not
+v3 v1 and
+v3 v1 or
+v3 v1 xor
+v3 v2 and
+v3 v2 or
+v3 v2 xor
+v3 v3 xor
+v4
+v4 not
+v4 v1 and
+v4 v1 or
+v4 v1 xor
+v4 v2 and
+v4 v2 or
+v4 v2 xor
+v4 v3 and
+v4 v3 or
+v4 v3 xor
+v4 v4 xor
+
+~~
+
+Analysis
+
+Thread: 0
+Walltime, this thread: 20738.57s
+Valid found, this thread: 72527904768 (3497246 per sec)
+Filled truth tables, all threads: 63582 (97.02%)
+Last evaluated: v1 not not not not v4 not v2 eor or not v4 v2 and or  (15 ops)
+
+Branch level:
+nStatUnderflowed: 29798765634 = 0.68%
+nStatHopeless: 38980681892 = 0.89%
+nStatNewLevel: 65010658362 = 1.48%
+
+Program level:
+nStatCheckedForUnderflow: 520085266868 = 11.83%
+nStatNotSingleResult: 417758596467 = 9.50%
+statTotalStackItems[]: 0=5 1=69 2=577 3=5113 4=42764 5=361656 6=3007064 7=25048510 8=202507362 9=1511771792 10=9894286684 11=55224801226 12=255059743721 13=929625370819 14=0
+Stack items on level 13 / nStatEvaluated = 929625370819 / 490286501234 = 1.896 (ikke helt relevant. skulle ha telt antall programmer evaluert på hver lengde)
+nStatEvaluated: 490286501234 = 11.15%
+nStatValid: 72527904767 = 1.65%
+
+Jeg kjørte en tråd med dybde 15. Men første op var alltid v1 så den teller ikke mot antall mulige programmer. Så prosentene er prosent av 8**14.
+nStatCheckedForUnderflow teller programmene som er igjen etter at greiner er kuttet.
+nStatUnderflowed teller hvor mange av programmene som hadde underflow, men bare av de som ble sjekket. Prosenten er av 8**14, ikke av de som ble sjekket.
+nStatNotSingleResult teller hvor mange av programmene som la != 1 verdier på stacken, men bare av programmene som ikke ble silt ut av underflow sjekken.
+nStatHopeless teller antall greiner som ble detektert som håpløse og som den ikke gikk inn i. Prosenten der er ikke så veldig relevant siden hver grein den hoppet over kan inneholde mange programmer.
+nStatNewLevel teller antall ganger den gikk ned et nivå i treet.
+nStatEvaluated teller programmene den måtte kjøre.
+nStatValid teller programmene som ble returnert som gyldige.
+
+Hoppet over i branch optimaliseringer: TotalSearchSpace - nStatCheckedForUnderflow = 8**14 - 520085266868 = 3877961244236 = 88.17%
+
+nStatValid = TotalSearchSpace - nSkippedInBranches - nStatUnderflowed - nStatNotSingleResult = 8**14 - 3877961244236 - 29798765634 - 417758596467 = 72527904767
+
+nStatUnderflowed ser lav ut fordi den teller bare 1 for hver gang en hel underflow branch kuttes.

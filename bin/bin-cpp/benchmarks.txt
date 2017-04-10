@@ -1,0 +1,11 @@
+main-unoptimized.cpp
+
+Total time: 22.97s
+Programs evaluated: 21551056
+Programs evaluated per second: 938387
+Valid programs: 162244 (0.75%)
+Found truth tables: 500 (100.00%)
+Operations in program: 7
+
+~~
+
