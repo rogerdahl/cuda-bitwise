@@ -26,10 +26,10 @@ set(
 )
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-  message(WARNING "Building DEBUG version")
+  message(STATUS "Building DEBUG version")
   set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}; -g -G -O0)
 else()
-  message(WARNING "Building RELEASE version")
+  message(STATUS "Building RELEASE version")
 endif()
 
 set(CMAKE_CXX_FLAGS
@@ -73,7 +73,24 @@ cuda_add_executable(
   bitwise-cuda
   ${SRC_DIR}/bitwise-cuda/main.cu
   ${SRC_DIR}/bitwise-cuda/cuda_helpers.cpp
+  ${SRC_DIR}/bitwise-cuda/int_types.h
+  ${SRC_DIR}/bitwise-cuda/cuda_helpers.h
 )
 
-message(WARNING "CUDA_NVCC_FLAGS: ${CUDA_NVCC_FLAGS}")
-message(WARNING "CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
+add_executable(
+  bitwise-cpp
+  ${SRC_DIR}/bitwise-cpp/int_types.h
+#  ${SRC_DIR}/bitwise-cpp/main.cpp
+  ${SRC_DIR}/bitwise-cpp/main_LATEST.cpp
+#  ${SRC_DIR}/bitwise-cpp/main_opt_cpu_1.cpp
+#  ${SRC_DIR}/bitwise-cpp/main_opt_cpu_2.cpp
+#  ${SRC_DIR}/bitwise-cpp/main_opt_cpu_3.cpp
+#  ${SRC_DIR}/bitwise-cpp/main_opt_cpu_4.cpp
+#  ${SRC_DIR}/bitwise-cpp/main_opt_cpu_5.cpp
+#  ${SRC_DIR}/bitwise-cpp/main_opt_cpu_5_analysis.cpp
+#  ${SRC_DIR}/bitwise-cpp/main_opt_cpu_6.cpp
+#  ${SRC_DIR}/bitwise-cpp/main_unopt.cpp
+)
+
+message(STATUS "CUDA_NVCC_FLAGS: ${CUDA_NVCC_FLAGS}")
+message(STATUS "CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
